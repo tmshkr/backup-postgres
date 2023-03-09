@@ -1,11 +1,10 @@
 FROM postgres:latest
-RUN apt-get update && apt-get install -y awscli
+RUN apt-get update
+RUN apt-get install -y awscli zip
 
 ENV POSTGRES_USER=postgres
 ENV POSTGRES_PASSWORD=postgres
 
-WORKDIR /tmp
+COPY ./run.sh ./
 
-COPY ./run.sh ./run.sh
-
-ENTRYPOINT ["/tmp/run.sh"]
+ENTRYPOINT ["/run.sh"]
