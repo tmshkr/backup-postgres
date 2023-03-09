@@ -1,0 +1,14 @@
+name: Push to Docker Hub
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: docker login -u tmshkr -p ${{ secrets.DOCKER_PASSWORD }}
+      - run: docker build -t tmshkr/backup-postgres:latest .
+      - run: docker push tmshkr/backup-postgres:latest
