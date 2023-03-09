@@ -2,5 +2,5 @@ version: "3"
 
 services:
   run:
-    image: tmshkr/postgres-backup
+    image: tmshkr/backup-postgres
     env_file: .env
