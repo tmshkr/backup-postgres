@@ -4,5 +4,3 @@ services:
   run:
     image: tmshkr/postgres-backup
     env_file: .env
-    volumes:
-      - ./dump:/dump
