@@ -13,3 +13,9 @@ Then run the script with Docker Compose:
 ```
 docker compose up
 ```
+
+## Automated backups
+
+You can use [ECS](https://aws.amazon.com/ecs/) to run this script on a schedule. Just provide the environment variables in the task definition.
+
+The image is available to use on Docker Hub: [tmshkr/backup-postgres](https://hub.docker.com/r/tmshkr/backup-postgres).
